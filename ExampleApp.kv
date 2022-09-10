@@ -1,0 +1,138 @@
+MyLayout2:
+# MyLayout:
+# MyGridLayout:
+
+# <TextInput>:
+#     font_size: 18
+    # size_hint: 1, .3
+
+# <Label>:
+#     font_size: 22
+#     size_hint: 1, .4
+
+<MyLayout2@Widget>:
+    background_color: 0, 187/255, 1,1
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: 10
+        spacing: 10
+        
+        Label:
+            font_size: 22
+            size_hint: 1, .4
+            text: "Name"
+            background_color: 0, 0, 1, 1
+            color: 0, 1, 0, 1
+            bold: True
+            italic: True
+            outline_color: 1, 1, 1, 1
+            outline_width: 2
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+        TextInput:
+            font_size: 18
+            size_hint: 1, .3
+            multiline: False
+
+        Label:
+            background_color: 204/255, 131/255, 6/255, 1
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            font_size: 22
+            size_hint: 1, .4
+            text: "SurName"
+        TextInput:
+            font_size: 18
+            size_hint: 1, .35
+            multiline: False
+
+        Button:
+            text: "Submit"
+        Button:
+            text: "Clear"
+        
+
+
+
+
+
+
+
+<MyLayout@Widget>:
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+        spacing: 20
+        padding: 50
+        Button:
+            text: "qwe"
+        Button:
+            text: "asd"
+        Button:
+            pos_hint: {"center_x": .5}
+            size_hint: .15, .25
+            text: "zxc"
+
+
+<MyGridLayout>
+    
+    name: name
+    surname: surname
+    color: color
+    
+    ScrollView:
+        size: root.width, root.height
+        BoxLayout:
+            spacing: 20
+            orientation: "vertical"
+            GridLayout:
+                cols: 2
+                pos_hint: {"center_x": .5}
+                size_hint: .5, .1
+                
+                Label:
+                    text: "Name"
+                TextInput:
+                    id: name
+                    text: "Ass"
+                    multiline: False
+                
+                Label:
+                    text: "Surname"
+                TextInput:
+                    id: surname
+                    text: "Butt"
+                    multiline: False
+                
+                Label:
+                    text: "Color"
+                TextInput:
+                    id: color
+                    text: "Dildo"
+                    multiline: False
+
+            Button:
+                text: "Submit"
+                font_size: 22
+                background_color: .2, .9, .1, 1
+                # background_normal: "imgs/5.large.jpg"
+                pos_hint: {"center_x": .5}
+                size_hint: (.25, .1)
+                # height: 100
+                on_press: root.submit(self)
+            

@@ -1,0 +1,118 @@
+
+
+
+<PurposeTextInput@TextInput>:
+    # size_hint: 1, .5
+
+<MainLayout>
+    ScrollView:
+        size: root.width, root.height
+        BoxLayout:
+            orientation: "vertical"
+            background_color: 1,0,0,1
+            
+            Label:
+                text: "Issuer"
+                font_size: 22
+                size_hint: 1, .5
+            
+            
+            
+            Label:
+                text: "Required keys and certificates options"
+                font_size: 22
+                size_hint: 1, .5
+                
+            GridLayout:
+                cols:3
+                size_hint: 1, 1
+                
+                Widget:
+                Widget:
+                Label:
+                    text: "Prefix"
+                    font_size: 16
+                
+                Label:
+                    text: "client"
+                    font_size: 16
+                CheckBox:
+                    id: client_checkbox
+                    active: True
+                    # on_active: root.purposes_checkbox_clicked(self, self.active, False)
+                    
+                PurposeTextInput:
+                    text: "client"
+                    disabled: not client_checkbox.active
+                    
+                Label:
+                    text: "server"
+                    font_size: 16
+                
+                CheckBox:
+                    id: server_checkbox
+                    active: True
+                    # on_active: root.purposes_checkbox_clicked(self, self.active, True)
+                    
+                PurposeTextInput:
+                    text: "server"
+                    disabled: not server_checkbox.active
+                    
+                Label:
+                    text: "Qualified"
+                    font_size: 16
+                
+                CheckBox:
+                    id: qualified_checkbox
+                    active: True
+                    on_active: root.qualified_checkbox_clicked(self, self.active)
+                    
+                PurposeTextInput:
+                    id: qualified_text_input
+                    text: "CN=\nO=\nC="
+                    disabled: not qualified_checkbox.active
+                
+            Label:
+                text: "Certificate converter"
+                font_size: 22
+                size_hint: 1, .5
+                
+            GridLayout:
+                cols:2
+                size_hint: 1, 1
+                
+                # Widget:
+                # Widget:
+                Label:
+                    text: "PEM to DER"
+                    font_size: 16
+                CheckBox:
+                    id: pem_to_der_radio_button
+                    group: "certificate_converter"
+                    active: True
+                    # on_active: root.purposes_checkbox_clicked(self, self.active, False)
+                    
+                Label:
+                    text: "DER to PEM"
+                    font_size: 16
+                
+                CheckBox:
+                    id: der_to_pem_radio_button
+                    group: "certificate_converter"
+                    active: True
+                    # on_active: root.purposes_checkbox_clicked(self, self.active, True)
+                
+                
+            Label:
+                id: purposes_value
+                font_size: 22
+            
+            AnchorLayout:
+                anchor_x: "center"
+                anchor_y: "bottom"
+                Button:
+                    text: "Do it"
+                    size_hint: .5, .5
+                    background_color: .2, 1, .1, 1
+                    # pos: "200dp", 0
+                    on_press: root.doit_clicked()
