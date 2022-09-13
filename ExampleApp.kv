@@ -1,5 +1,89 @@
-MyLayout2:
-# MyLayout:
+# ScreenManager example exercise 31
+WindowsManager:
+    MainWindow:
+    CertificateSatisfaction:
+    CertificateConverter:
+
+<MainWindow>:
+    name: "Main"
+    
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        
+        Label:
+            text: "Main"
+            font_size: 22
+        
+        Button:
+            text: "Next screen"
+            font_size: 22
+            on_release:
+                app.root.current = "Satisfaction"
+                root.manager.transition.direction = "left"
+    
+<CertificateSatisfaction>:
+    name: "Satisfaction"
+    
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        
+        Label:
+            text: "Satisfaction"
+            font_size: 22
+        
+        Button:
+            text: "Next screen"
+            font_size: 22
+            on_release: 
+                app.root.current = "Main"
+                root.manager.transition.direction = "right"
+
+<CertificateConverter>:
+
+
+
+
+# Popup example exercise 30
+# PopupEx:
+#:import Factory kivy.factory.Factory
+<PopupWindow@Popup>:
+    auto_dismiss: False
+    size_hint: .6, .2
+    pos_hint: {"x": .2, "top": .65}
+    
+    title: "Popup window"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        
+        Label:
+            text: "Something interesting"
+            font_size: 18
+        
+        Button:
+            text: "Okay"
+            font_size: 18
+            on_release: root.dismiss()
+    
+
+<PopupEx@Widget>:
+    BoxLayout:
+        size: root.width, root.height
+        orientation: "vertical"
+
+        Label:
+            text: "Popup Label"
+            font_size: 18
+            
+        Button:
+            text: "Popup Button"
+            font_size: 18
+            on_release: Factory.PopupWindow().open()
+        
+
+# MyLayout2:
 # MyGridLayout:
 
 # <TextInput>:
@@ -72,7 +156,7 @@ MyLayout2:
 
 
 
-
+# MyLayout:
 <MyLayout@Widget>:
     BoxLayout:
         size: root.width, root.height
