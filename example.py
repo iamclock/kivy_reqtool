@@ -10,7 +10,7 @@ class MainWindow(Screen):
     pass
 
 
-class CertificateSatisfaction(Screen):
+class RequestSatisfaction(Screen):
     pass
 
 
