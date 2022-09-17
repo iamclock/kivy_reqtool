@@ -4,7 +4,28 @@ from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 
+# Spinner example exercise 32
+Builder.load_file("ExampleApp.kv")
 
+
+class CustomLayout(Widget):
+
+    def spinner_clicked(self, value):
+        self.ids.click_label.text = f"Issuer: {value}"
+
+
+class ExampleApp(App):
+
+    def build(self):
+        main_widget = CustomLayout()
+        main_widget.ids.click_label.text = "Issuer: ???"
+        return main_widget
+        # return CustomLayout()
+
+
+if __name__ == '__main__':
+    ExampleApp().run()
+'''
 # Screens
 class MainWindow(Screen):
     pass
@@ -22,6 +43,16 @@ class WindowsManager(ScreenManager):
     pass
 
 
+class ExampleApp(App):
+    def build(self):
+        return kv  # For screenmanager
+
+
+if __name__ == '__main__':
+    ExampleApp().run()
+'''
+# Какой то урок, не помню
+'''
 kv = Builder.load_file("ExampleApp.kv")
 
 
@@ -57,3 +88,4 @@ class ExampleApp(App):
 
 if __name__ == '__main__':
     ExampleApp().run()
+'''
