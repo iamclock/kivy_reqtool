@@ -5,7 +5,7 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 # Spinner example exercise 32
-Builder.load_file("ExampleApp.kv")
+# Builder.load_file("ExampleApp.kv")
 
 
 class CustomLayout(Widget):
@@ -17,10 +17,10 @@ class CustomLayout(Widget):
 class ExampleApp(App):
 
     def build(self):
-        main_widget = CustomLayout()
-        main_widget.ids.click_label.text = "Issuer: ???"
-        return main_widget
-        # return CustomLayout()
+        # main_widget = CustomLayout()
+        # main_widget.ids.click_label.text = "Issuer: ???"
+        # return main_widget
+        return CustomLayout()
 
 
 if __name__ == '__main__':
