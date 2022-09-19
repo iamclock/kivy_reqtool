@@ -3,10 +3,21 @@ from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.tabbedpanel import TabbedPanel
 
-# Splitters example exercise 32
+
+# Tabs example exercise 34
+class ExampleApp(App):
+
+    # def build(self):
+    #     return CustomLayout()
+    pass
 
 
+if __name__ == '__main__':
+    ExampleApp().run()
+'''
+# Splitters example exercise 33
 class SplittersEx(Widget):
     pass
 
@@ -24,6 +35,7 @@ class ExampleApp(App):
 
 if __name__ == '__main__':
     ExampleApp().run()
+'''
 '''
 # Spinner example exercise 32
 # Builder.load_file("ExampleApp.kv")
