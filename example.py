@@ -1,9 +1,9 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
-from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.tabbedpanel import TabbedPanel
+# from kivy.properties import ObjectProperty
+# from kivy.lang import Builder
+# from kivy.uix.screenmanager import ScreenManager, Screen
+# from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.animation import Animation
 
 
