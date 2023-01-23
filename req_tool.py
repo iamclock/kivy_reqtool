@@ -8,16 +8,13 @@ Builder.load_file("ReqToolApp.kv")
 
 Window.size = (520, 700)
 
-# test ssh
+
 class CertificatePurposes(enum.IntEnum):
     none = 0x0
     client_only = 0x1
     server_only = 0x2
     both = client_only ^ server_only
     pass
-
-
-# test
 
 
 class MainLayout(Widget):
