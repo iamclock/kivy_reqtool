@@ -17,9 +17,6 @@ class CertificatePurposes(enum.IntEnum):
     pass
 
 
-# test
-
-
 class MainLayout(Widget):
     purposes = CertificatePurposes.both.value
 
